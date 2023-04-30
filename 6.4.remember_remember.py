@@ -10,12 +10,12 @@ def decode_code_from_image(image_path):
     :param image_path: The path to the image file.
     :return: The encrypted string in the image
     """
-    with PIL.Image.open(image_path) as img:
-        img = img.convert('RGB')
-        width = img.size[0]
-        height = img.size[1]
-        black_pixels_chr = [chr(line) for col in range(width) for line in range(height) if
-                            img.getpixel((col, line)) == BLACK_RGB_VAL]
+    with PIL.Image.open(image_path) as image:
+        image = image.convert('RGB')
+        width = image.size[0]
+        height = image.size[1]
+        black_pixels_chr = [chr(line) for column in range(width) for line in range(height) if
+                            image.getpixel((column, line)) == BLACK_RGB_VAL]
         return "".join(black_pixels_chr)
 
 
