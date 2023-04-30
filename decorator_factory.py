@@ -2,6 +2,7 @@ from functools import wraps
 
 
 class InvalidTypeError(Exception):
+
     """
     Custom exception raised when an invalid type is received.
     """
@@ -11,6 +12,7 @@ class InvalidTypeError(Exception):
 
 
 def type_check(correct_type):
+
     """
     Decorator that checks the type of a function argument.
     :param correct_type: The correct type of the input argument.
